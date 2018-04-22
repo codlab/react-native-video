@@ -320,7 +320,7 @@ static NSString *const timedMetadata = @"timedMetadata";
   NSString *type = [source objectForKey:@"type"];
 
   NSURL *url = (isNetwork || isAsset) ?
-    [NSURL URLWithString:uri] :
+    [NSURL fileURLWithPath:uri] :
     [[NSURL alloc] initFileURLWithPath:[[NSBundle mainBundle] pathForResource:uri ofType:type]];
 
   if (isNetwork) {
